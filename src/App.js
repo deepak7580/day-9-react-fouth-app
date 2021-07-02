@@ -1,18 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <MyAppHomePage />
-
-      <MyAppExplorePage />
-
-      <MyAppNotificationPage />
-
-      <MyAppMessagesPage />
-    </div>
+    <Router>
+      <Route exact path="/" component={MyAppHomePage} />
+      <Route exact path="/home" component={MyAppHomePage} />
+      <Route exact path="/explore" component={MyAppExplorePage} />
+      <Route exact path="/notification" component={MyAppNotificationPage} />
+      <Route exact path="/message" component={MyAppMessagesPage} />
+    </Router>
   );
 }
 
